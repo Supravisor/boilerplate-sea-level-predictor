@@ -10,7 +10,7 @@ def draw_plot():
 
 
     # Create scatter plot
-
+    plt.scatter(x,y)
 
     # Create first line of best fit
 
