@@ -22,6 +22,16 @@ def draw_plot():
 
 
     # Create second line of best fit
+    df_2000 = df.loc[df['Year'] >= 2000]
+
+    prediction_x = df_2000['Year']
+    prediction_y = df_2000['CSIRO Adjusted Sea Level']
+    prediction_result = linregress(prediction_x, predictions_y)
+
+    x_axis_prediction = pd.Series([i for i in range(2000,2051)])
+    y_axis_prediction = x_axis_prediction * prediction_result.slope + prediction_result.intercept
+
+    plt.plot(x_axis_prediction, y_axis_prediction)
 
 
     # Add labels and title
