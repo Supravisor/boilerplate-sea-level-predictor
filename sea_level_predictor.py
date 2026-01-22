@@ -13,6 +13,12 @@ def draw_plot():
     plt.scatter(x,y)
 
     # Create first line of best fit
+    result = linregress(x, y)
+
+    x_axis = pd.Series([i for i in range(1880,2051)])
+    y_axis = x_axis * result.slope + result.intercept
+
+    plt.plot(x_axis, y_axis)
 
 
     # Create second line of best fit
